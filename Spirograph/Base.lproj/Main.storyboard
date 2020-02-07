@@ -24,7 +24,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Circles" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Spirograph" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="640" height="480"/>
@@ -46,94 +46,109 @@
             <objects>
                 <viewController id="8MB-hT-wAJ" customClass="ViewController" customModule="Circles" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="IfO-7T-c7e">
-                        <rect key="frame" x="0.0" y="0.0" width="758" height="520"/>
+                        <rect key="frame" x="0.0" y="0.0" width="642" height="520"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="No6-Ci-LGj" customClass="CirclesView" customModule="Circles" customModuleProvider="target">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="No6-Ci-LGj" customClass="SpirographView" customModule="Circles" customModuleProvider="target">
                                 <rect key="frame" x="10" y="10" width="500" height="500"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="500" id="dwy-NN-w3J"/>
                                     <constraint firstAttribute="width" constant="500" id="fcf-Vq-OEg"/>
                                 </constraints>
                             </customView>
-                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RUQ-Hk-kbz">
-                                <rect key="frame" x="518" y="377" width="232" height="19"/>
-                                <sliderCell key="cell" state="on" alignment="left" minValue="10" maxValue="200" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="dNz-Sg-Vhp"/>
-                                <connections>
-                                    <action selector="sliderValueChangedWithSender:" target="8MB-hT-wAJ" id="9TO-AM-PNi"/>
-                                </connections>
-                            </slider>
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Omn-tx-kjj">
-                                <rect key="frame" x="518" y="306" width="232" height="19"/>
-                                <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="200" doubleValue="17.610176282051281" tickMarkPosition="above" sliderType="linear" id="9zK-bc-KIl"/>
+                                <rect key="frame" x="518" y="270" width="116" height="24"/>
+                                <sliderCell key="cell" state="on" alignment="left" minValue="0.10000000000000001" maxValue="0.5" doubleValue="0.5" tickMarkPosition="above" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="9zK-bc-KIl"/>
                                 <connections>
                                     <action selector="sliderValueChangedWithSender:" target="8MB-hT-wAJ" id="LTf-yt-rFZ"/>
                                 </connections>
                             </slider>
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UMY-rh-h7h">
-                                <rect key="frame" x="518" y="235" width="232" height="19"/>
-                                <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="200" doubleValue="17.610176282051281" tickMarkPosition="above" sliderType="linear" id="qWQ-DS-qok"/>
+                                <rect key="frame" x="518" y="192" width="116" height="24"/>
+                                <sliderCell key="cell" state="on" alignment="left" minValue="0.10000000000000001" maxValue="1.5" doubleValue="1.0999999999999999" tickMarkPosition="above" numberOfTickMarks="20" allowsTickMarkValuesOnly="YES" sliderType="linear" id="qWQ-DS-qok"/>
                                 <connections>
                                     <action selector="sliderValueChangedWithSender:" target="8MB-hT-wAJ" id="Txa-wM-Zln"/>
                                 </connections>
                             </slider>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b8D-bX-2oY">
-                                <rect key="frame" x="518" y="404" width="232" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Big Radius" id="cNt-6v-dXv">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1dL-bz-U3Y">
-                                <rect key="frame" x="518" y="333" width="232" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Small Radius" id="5JJ-Fy-E5o">
+                                <rect key="frame" x="518" y="304" width="116" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Small Radius Ratio" id="5JJ-Fy-E5o">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3MA-Qf-eVh">
-                                <rect key="frame" x="518" y="262" width="232" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Dot Radius" id="cd1-fl-x2N">
+                                <rect key="frame" x="518" y="226" width="116" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Dot Radius Ratio" id="cd1-fl-x2N">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y00-Oq-M5L">
+                                <rect key="frame" x="687" y="322" width="61" height="16"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" id="Ra5-hY-JDr">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zaP-nj-0oL">
+                                <rect key="frame" x="687" y="252" width="61" height="16"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" id="0GC-9t-6eV">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HcB-J1-bIv">
+                                <rect key="frame" x="514" y="13" width="124" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="250" constant="68" id="RPX-RW-OE7"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Export" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="NqN-j1-53j">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="exportImage:" target="8MB-hT-wAJ" id="p0d-vX-OIb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="UMY-rh-h7h" secondAttribute="trailing" constant="10" id="1g4-jH-Twu"/>
-                            <constraint firstItem="b8D-bX-2oY" firstAttribute="top" secondItem="IfO-7T-c7e" secondAttribute="top" constant="100" id="2Yx-Gb-Zgg"/>
                             <constraint firstItem="UMY-rh-h7h" firstAttribute="top" secondItem="3MA-Qf-eVh" secondAttribute="bottom" constant="10" id="3vE-d0-M7b"/>
                             <constraint firstAttribute="trailing" secondItem="3MA-Qf-eVh" secondAttribute="trailing" constant="10" id="4bb-GT-XzX"/>
+                            <constraint firstItem="HcB-J1-bIv" firstAttribute="leading" secondItem="No6-Ci-LGj" secondAttribute="trailing" constant="10" id="7qv-r1-u3V"/>
                             <constraint firstAttribute="trailing" secondItem="Omn-tx-kjj" secondAttribute="trailing" constant="10" id="7xf-Ve-Y5K"/>
-                            <constraint firstAttribute="trailing" secondItem="b8D-bX-2oY" secondAttribute="trailing" constant="10" id="8Gm-u9-vQR"/>
                             <constraint firstItem="No6-Ci-LGj" firstAttribute="top" secondItem="IfO-7T-c7e" secondAttribute="top" constant="10" id="GRI-4V-IgK"/>
-                            <constraint firstAttribute="trailing" secondItem="RUQ-Hk-kbz" secondAttribute="trailing" constant="10" id="PRa-47-ODp"/>
-                            <constraint firstItem="b8D-bX-2oY" firstAttribute="leading" secondItem="No6-Ci-LGj" secondAttribute="trailing" constant="10" id="UlO-EX-CQI"/>
-                            <constraint firstItem="1dL-bz-U3Y" firstAttribute="top" secondItem="RUQ-Hk-kbz" secondAttribute="bottom" constant="30" id="VOm-XI-ZCl"/>
-                            <constraint firstItem="RUQ-Hk-kbz" firstAttribute="leading" secondItem="No6-Ci-LGj" secondAttribute="trailing" constant="10" id="Vmj-jK-OQ4"/>
-                            <constraint firstItem="RUQ-Hk-kbz" firstAttribute="top" secondItem="b8D-bX-2oY" secondAttribute="bottom" constant="10" id="WDQ-xG-7c0"/>
                             <constraint firstItem="1dL-bz-U3Y" firstAttribute="leading" secondItem="No6-Ci-LGj" secondAttribute="trailing" constant="10" id="X2F-6Z-yph"/>
                             <constraint firstItem="UMY-rh-h7h" firstAttribute="leading" secondItem="No6-Ci-LGj" secondAttribute="trailing" constant="10" id="XJd-Rs-eus"/>
+                            <constraint firstItem="Omn-tx-kjj" firstAttribute="top" secondItem="1dL-bz-U3Y" secondAttribute="bottom" constant="10" id="e0o-bg-mVF"/>
                             <constraint firstItem="Omn-tx-kjj" firstAttribute="top" secondItem="1dL-bz-U3Y" secondAttribute="bottom" constant="10" id="eob-Wq-6os"/>
                             <constraint firstItem="3MA-Qf-eVh" firstAttribute="top" secondItem="Omn-tx-kjj" secondAttribute="bottom" constant="30" id="fTf-Jg-6Ml"/>
                             <constraint firstItem="3MA-Qf-eVh" firstAttribute="top" secondItem="Omn-tx-kjj" secondAttribute="bottom" constant="30" id="iBN-pA-IZH"/>
                             <constraint firstItem="No6-Ci-LGj" firstAttribute="leading" secondItem="IfO-7T-c7e" secondAttribute="leading" constant="10" id="iqw-BW-Obp"/>
                             <constraint firstItem="Omn-tx-kjj" firstAttribute="top" secondItem="1dL-bz-U3Y" secondAttribute="bottom" constant="10" id="jnI-Yz-UVU"/>
                             <constraint firstItem="3MA-Qf-eVh" firstAttribute="leading" secondItem="No6-Ci-LGj" secondAttribute="trailing" constant="10" id="kPl-U5-t9b"/>
+                            <constraint firstItem="1dL-bz-U3Y" firstAttribute="top" secondItem="IfO-7T-c7e" secondAttribute="top" constant="200" id="nlR-u9-AVq"/>
                             <constraint firstAttribute="trailing" secondItem="1dL-bz-U3Y" secondAttribute="trailing" constant="10" id="oh1-OG-75K"/>
                             <constraint firstAttribute="trailing" secondItem="Omn-tx-kjj" secondAttribute="trailing" constant="10" id="r8e-ka-10h"/>
+                            <constraint firstAttribute="bottom" secondItem="HcB-J1-bIv" secondAttribute="bottom" constant="20" id="rHo-Jn-2vh"/>
                             <constraint firstAttribute="bottom" secondItem="No6-Ci-LGj" secondAttribute="bottom" constant="10" id="tnL-N6-8kc"/>
                             <constraint firstItem="Omn-tx-kjj" firstAttribute="leading" secondItem="No6-Ci-LGj" secondAttribute="trailing" constant="10" id="vDg-jr-c2g"/>
+                            <constraint firstAttribute="trailing" secondItem="HcB-J1-bIv" secondAttribute="trailing" constant="10" id="wH9-Ak-aoD"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="CirclesView" destination="No6-Ci-LGj" id="zq5-Fa-ttS"/>
-                        <outlet property="sliderBigRadius" destination="RUQ-Hk-kbz" id="pdM-0Q-tPL"/>
+                        <outlet property="lblDotRadius" destination="zaP-nj-0oL" id="xh5-LC-cMe"/>
+                        <outlet property="lblSmallRadius" destination="Y00-Oq-M5L" id="1UD-OB-nwL"/>
                         <outlet property="sliderDotRadius" destination="UMY-rh-h7h" id="TcK-a8-xIo"/>
                         <outlet property="sliderSmallRadius" destination="Omn-tx-kjj" id="5fL-2H-GE6"/>
+                        <outlet property="spirographView" destination="No6-Ci-LGj" id="M1r-wH-LzY"/>
                     </connections>
                 </viewController>
                 <customObject id="POc-XR-r3y" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
