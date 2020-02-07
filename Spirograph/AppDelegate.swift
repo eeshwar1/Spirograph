@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Circles
+//  Spirograph
 //
 //  Created by Venky Venkatakrishnan on 12/25/19.
 //  Copyright © 2019 Venky UL. All rights reserved.

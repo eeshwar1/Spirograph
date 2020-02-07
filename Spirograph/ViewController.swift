@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Circles
+//  SpirographView
 //
 //  Created by Venky Venkatakrishnan on 2/2/20.
 //  Copyright © 2020 Venky UL. All rights reserved.

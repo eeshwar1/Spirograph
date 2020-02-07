@@ -10,18 +10,20 @@
 		6529403B23B427B8000F9475 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6529403A23B427B8000F9475 /* AppDelegate.swift */; };
 		6529404123B427C0000F9475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6529404023B427C0000F9475 /* Assets.xcassets */; };
 		6529404423B427C0000F9475 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6529404223B427C0000F9475 /* Main.storyboard */; };
-		65FD960823E74CA200499380 /* CirclesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD960723E74CA200499380 /* CirclesView.swift */; };
+		656EE1B723EBC3B800162DE2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656EE1B623EBC3B800162DE2 /* Extensions.swift */; };
+		65FD960823E74CA200499380 /* SpirographView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD960723E74CA200499380 /* SpirographView.swift */; };
 		65FD960C23E74E9A00499380 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD960B23E74E9A00499380 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6529403723B427B7000F9475 /* Circles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Circles.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6529403723B427B7000F9475 /* Spirograph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spirograph.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6529403A23B427B8000F9475 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6529404023B427C0000F9475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6529404323B427C0000F9475 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6529404523B427C0000F9475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6529404623B427C0000F9475 /* Circles.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Circles.entitlements; sourceTree = "<group>"; };
-		65FD960723E74CA200499380 /* CirclesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclesView.swift; sourceTree = "<group>"; };
+		6529404623B427C0000F9475 /* Spirograph.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Spirograph.entitlements; sourceTree = "<group>"; };
+		656EE1B623EBC3B800162DE2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		65FD960723E74CA200499380 /* SpirographView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpirographView.swift; sourceTree = "<group>"; };
 		65FD960B23E74E9A00499380 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -39,7 +41,7 @@
 		6529402E23B427B7000F9475 = {
 			isa = PBXGroup;
 			children = (
-				6529403923B427B7000F9475 /* Circles */,
+				6529403923B427B7000F9475 /* Spirograph */,
 				6529403823B427B7000F9475 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,31 +49,32 @@
 		6529403823B427B7000F9475 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6529403723B427B7000F9475 /* Circles.app */,
+				6529403723B427B7000F9475 /* Spirograph.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6529403923B427B7000F9475 /* Circles */ = {
+		6529403923B427B7000F9475 /* Spirograph */ = {
 			isa = PBXGroup;
 			children = (
 				6529403A23B427B8000F9475 /* AppDelegate.swift */,
 				6529404023B427C0000F9475 /* Assets.xcassets */,
 				65FD960B23E74E9A00499380 /* ViewController.swift */,
 				6529404223B427C0000F9475 /* Main.storyboard */,
-				65FD960723E74CA200499380 /* CirclesView.swift */,
+				65FD960723E74CA200499380 /* SpirographView.swift */,
+				656EE1B623EBC3B800162DE2 /* Extensions.swift */,
 				6529404523B427C0000F9475 /* Info.plist */,
-				6529404623B427C0000F9475 /* Circles.entitlements */,
+				6529404623B427C0000F9475 /* Spirograph.entitlements */,
 			);
-			path = Circles;
+			path = Spirograph;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6529403623B427B7000F9475 /* Circles */ = {
+		6529403623B427B7000F9475 /* Spirograph */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6529404923B427C0000F9475 /* Build configuration list for PBXNativeTarget "Circles" */;
+			buildConfigurationList = 6529404923B427C0000F9475 /* Build configuration list for PBXNativeTarget "Spirograph" */;
 			buildPhases = (
 				6529403323B427B7000F9475 /* Sources */,
 				6529403423B427B7000F9475 /* Frameworks */,
@@ -81,9 +84,9 @@
 			);
 			dependencies = (
 			);
-			name = Circles;
+			name = Spirograph;
 			productName = Circles;
-			productReference = 6529403723B427B7000F9475 /* Circles.app */;
+			productReference = 6529403723B427B7000F9475 /* Spirograph.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -101,7 +104,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6529403223B427B7000F9475 /* Build configuration list for PBXProject "Circles" */;
+			buildConfigurationList = 6529403223B427B7000F9475 /* Build configuration list for PBXProject "Spirograph" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -114,7 +117,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6529403623B427B7000F9475 /* Circles */,
+				6529403623B427B7000F9475 /* Spirograph */,
 			);
 		};
 /* End PBXProject section */
@@ -137,8 +140,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				65FD960C23E74E9A00499380 /* ViewController.swift in Sources */,
-				65FD960823E74CA200499380 /* CirclesView.swift in Sources */,
+				65FD960823E74CA200499380 /* SpirographView.swift in Sources */,
 				6529403B23B427B8000F9475 /* AppDelegate.swift in Sources */,
+				656EE1B723EBC3B800162DE2 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,17 +277,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Circles/Circles.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Spirograph/Spirograph.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 74757A785Z;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = Circles/Info.plist;
+				INFOPLIST_FILE = Spirograph/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.venkyul.Circles;
+				PRODUCT_BUNDLE_IDENTIFIER = com.venkyul.Spirograph;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -293,17 +297,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Circles/Circles.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Spirograph/Spirograph.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 74757A785Z;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = Circles/Info.plist;
+				INFOPLIST_FILE = Spirograph/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.venkyul.Circles;
+				PRODUCT_BUNDLE_IDENTIFIER = com.venkyul.Spirograph;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -312,7 +316,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6529403223B427B7000F9475 /* Build configuration list for PBXProject "Circles" */ = {
+		6529403223B427B7000F9475 /* Build configuration list for PBXProject "Spirograph" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6529404723B427C0000F9475 /* Debug */,
@@ -321,7 +325,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6529404923B427C0000F9475 /* Build configuration list for PBXNativeTarget "Circles" */ = {
+		6529404923B427C0000F9475 /* Build configuration list for PBXNativeTarget "Spirograph" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6529404A23B427C0000F9475 /* Debug */,
