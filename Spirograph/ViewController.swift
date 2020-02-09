@@ -18,6 +18,7 @@ class ViewController: NSViewController {
  
     @IBOutlet weak var lblSmallRadius: NSTextField!
     @IBOutlet weak var lblDotRadius: NSTextField!
+    @IBOutlet weak var lblSize: NSTextField!
     
     
     var bigRadius: Double = 100
@@ -30,6 +31,7 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        sliderSpiroSize.doubleValue = sizeRatio
         sliderSmallRadius.doubleValue = smallRadiusRatio
         sliderDotRadius.doubleValue = dotRadiusRatio
         
@@ -39,6 +41,7 @@ class ViewController: NSViewController {
     func setRadiusLabels()
     {
 
+        lblSize.stringValue = sizeRatio.description
         lblSmallRadius.stringValue = smallRadiusRatio.description
         lblDotRadius.stringValue = dotRadiusRatio.description
     }
