@@ -11,6 +11,8 @@ import Cocoa
 class ViewController: NSViewController {
 
     @IBOutlet weak var spirographView: SpirographView!
+    
+    @IBOutlet weak var sliderSpiroSize: NSSlider!
     @IBOutlet weak var sliderSmallRadius: NSSlider!
     @IBOutlet weak var sliderDotRadius: NSSlider!
  
@@ -20,6 +22,7 @@ class ViewController: NSViewController {
     
     var bigRadius: Double = 100
     var smallRadius: Double = 10
+    var sizeRatio: Double = 0.8
     var smallRadiusRatio: Double = 0.4
     var dotRadius: Double = 40
     var dotRadiusRatio: Double = 0.4
@@ -43,6 +46,9 @@ class ViewController: NSViewController {
     @IBAction func sliderValueChanged(sender: NSSlider) {
         
         switch sender {
+            
+        case sliderSpiroSize:
+            sizeRatio = sender.doubleValue.round(toDecimal: 2)
         case sliderSmallRadius:
             smallRadiusRatio = sender.doubleValue.round(toDecimal: 2)
             smallRadius = bigRadius * smallRadiusRatio
@@ -54,27 +60,30 @@ class ViewController: NSViewController {
         
         setRadiusLabels()
         
-        self.spirographView.setSpirographValues(smallRadiusRatio: smallRadiusRatio, dotRadiusRatio: dotRadiusRatio)
+        self.spirographView.setSpirographValues(sizeRatio: sizeRatio, smallRadiusRatio: smallRadiusRatio, dotRadiusRatio: dotRadiusRatio)
     }
     
-    // TODO: Fix Export
-    // This function is now broken (does not export the spirograph shape
-    // after animation and CAShapeLayer were added to SpirographView.
     @IBAction func exportImage(_ sender: AnyObject) {
-      if let tiffdata = spirographView.snapshot().tiffRepresentation,
-        let bitmaprep = NSBitmapImageRep(data: tiffdata) {
+
         
-        let props = [NSBitmapImageRep.PropertyKey.compressionFactor: 1.0]
-        if let bitmapData = NSBitmapImageRep.representationOfImageReps(in: [bitmaprep], using: .png, properties: props) {
-          
-          let path: NSString = "~/Desktop/Spirograph.jpg"
-          let resolvedPath = path.expandingTildeInPath
-          
-          try! bitmapData.write(to: URL(fileURLWithPath: resolvedPath), options: [])
-          
-          print("Your image has been saved to \(resolvedPath)")
-          
+        let image = self.spirographView.renderImage()
+        
+        if let tiffdata = image.tiffRepresentation,
+         let bitmaprep = NSBitmapImageRep(data: tiffdata) {
+         
+         let props = [NSBitmapImageRep.PropertyKey.compressionFactor: 1.0]
+         if let bitmapData = NSBitmapImageRep.representationOfImageReps(in: [bitmaprep], using: .png, properties: props) {
+           
+               let path: NSString = "~/Desktop/Spirograph.jpg"
+               let resolvedPath = path.expandingTildeInPath
+               
+               try! bitmapData.write(to: URL(fileURLWithPath: resolvedPath), options: [])
+               
+               print("Your image has been saved to \(resolvedPath)")
+           
+         }
+            
         }
-      }
+
     }
 }

@@ -43,17 +43,20 @@ class SpirographView: NSView {
         setupShapeLayer()
         self.wantsLayer = true
         self.layer!.addSublayer(shapeLayer)
+
     }
 
     func setupShapeLayer()
     {
         self.shapeLayer = CAShapeLayer()
                           
-        shapeLayer.bounds =  CGRect(x: 0, y: 0, width: 500, height: 500)
-       shapeLayer.position = CGPoint(x: self.bounds.width/2, y: self.bounds.height/2)
+        self.shapeLayer.bounds =  CGRect(x: 0, y: 0, width: 500, height: 500)
+        self.shapeLayer.position = CGPoint(x: self.bounds.width/2, y: self.bounds.height/2)
        
-       shapeLayer.fillColor = NSColor.blue.cgColor
-       shapeLayer.strokeColor = NSColor.green.cgColor
+        self.shapeLayer.fillColor = NSColor.blue.cgColor
+        shapeLayer.strokeColor = NSColor.green.cgColor
+        
+       
        
        
     }
@@ -63,15 +66,12 @@ class SpirographView: NSView {
         super.draw(dirtyRect)
         
         self.backgroundColor.set()
-        // dirtyRect.fill()
         
         self.bounds.fill()
             
         let center = NSPoint(x: self.bounds.width/2, y: self.bounds.height/2)
         
-        bigRadius = Double((self.bounds.width < self.bounds.height ? self.bounds.width : self.bounds.height) * 0.4)
-        
-        // spirograph(center: center, bigR: bigRadius, smallR: smallRadius, dotR: dotRadius)
+        // bigRadius = Double((self.bounds.width < self.bounds.height ? self.bounds.width : self.bounds.height) * 0.4)
         
         spirographEx(center: center, bigR: bigRadius, smallR: smallRadius, dotR: dotRadius)
        
@@ -79,7 +79,28 @@ class SpirographView: NSView {
         
     }
     
-    
+    func renderImage() -> NSImage {
+        
+        let image: NSImage = NSImage(size: NSSize(width: 500,height: 500))
+        
+        image.lockFocus()
+
+        let context = NSGraphicsContext.current!.cgContext
+        
+        self.shapeLayer.path = spiroPath.cgPath
+       
+        NSColor.black.set()
+        self.shapeLayer.bounds.fill()
+        
+        displayAttributeData()
+        
+        self.shapeLayer.render(in: context)
+        
+        image.unlockFocus()
+        
+        return image
+        
+    }
     
     func displayAttributeData() {
         
@@ -94,9 +115,10 @@ class SpirographView: NSView {
         string.draw(in: CGRect(x: 10, y: 390, width: 200, height: 100), withAttributes: attrs)
     }
     
-    func setSpirographValues(smallRadiusRatio: Double, dotRadiusRatio: Double)
+    func setSpirographValues(sizeRatio: Double, smallRadiusRatio: Double, dotRadiusRatio: Double)
     {
     
+        self.bigRadius = (Double((self.bounds.width < self.bounds.height ? self.bounds.width : self.bounds.height)) * 0.8 * sizeRatio/2).round(toDecimal: 2)
         self.smallRadius = (bigRadius * smallRadiusRatio).round(toDecimal: 2)
         self.dotRadius = (smallRadius * dotRadiusRatio).round(toDecimal: 2)
         
@@ -197,6 +219,7 @@ class SpirographView: NSView {
         
         return NSPoint(x: pointX, y: pointY)
     }
+    
     func circleAnimation()
     {
 
