@@ -9,7 +9,127 @@
         <scene sceneID="JPo-4y-FX3">
             <objects>
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
-                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6"/>
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="Application" id="7QM-AO-Mne">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Application" id="etO-Nn-tpM">
+                                    <items>
+                                        <menuItem title="About Application" id="d3S-5Y-t2t">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="P3I-j7-kKp"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="Db4-Hk-Tyh"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="8cj-Ac-kGH"/>
+                                        <menuItem isSeparatorItem="YES" id="eYA-4l-VFr"/>
+                                        <menuItem title="Services" id="KZf-eG-oD1">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Services" systemMenu="services" id="bCm-8y-7K7"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="ZmJ-4w-ixP"/>
+                                        <menuItem title="Hide Application" keyEquivalent="h" id="V6t-VK-Bc9">
+                                            <connections>
+                                                <action selector="hide:" target="Ady-hI-5gd" id="gOx-0N-OiV"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Hide Others" keyEquivalent="h" id="u1z-Qr-wS2">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="qyk-M2-YJF"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Show All" id="ZMQ-CJ-0pR">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="unhideAllApplications:" target="Ady-hI-5gd" id="oJ8-GX-vVO"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="0u0-vo-W5A"/>
+                                        <menuItem title="Quit Application" keyEquivalent="q" id="OJZ-UZ-ATf">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="rsa-ef-lqb"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="File" id="QC1-z8-PHg">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="File" id="EoS-Bk-3jZ">
+                                    <items>
+                                        <menuItem title="New" keyEquivalent="n" id="FUb-rv-PPC">
+                                            <connections>
+                                                <action selector="newDocument:" target="Ady-hI-5gd" id="uhz-qJ-IhM"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Open…" keyEquivalent="o" id="lvr-z8-RoL">
+                                            <connections>
+                                                <action selector="openDocument:" target="Ady-hI-5gd" id="bDE-TQ-5Tj"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Open Recent" id="mmf-4U-CNc">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Open Recent" systemMenu="recentDocuments" id="f4C-wZ-48x">
+                                                <items>
+                                                    <menuItem title="Clear Menu" id="EWr-pP-O3w">
+                                                        <connections>
+                                                            <action selector="clearRecentDocuments:" target="Ady-hI-5gd" id="dNo-55-pCi"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                </items>
+                                            </menu>
+                                        </menuItem>
+                                        <menuItem title="Export" keyEquivalent="e" id="khQ-1K-oWJ">
+                                            <connections>
+                                                <action selector="exportAsImage:" target="Ady-hI-5gd" id="1sg-Ha-6tL"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="jXR-eN-MpT"/>
+                                        <menuItem title="Close" keyEquivalent="w" id="jK7-7j-U9k">
+                                            <connections>
+                                                <action selector="performClose:" target="Ady-hI-5gd" id="bxk-cc-W25"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Save" keyEquivalent="s" id="a8B-Gw-uhK">
+                                            <connections>
+                                                <action selector="saveDocument:" target="Ady-hI-5gd" id="4rZ-qP-vpK"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Save As…" keyEquivalent="S" id="pnj-f2-gUO">
+                                            <connections>
+                                                <action selector="saveDocumentAs:" target="Ady-hI-5gd" id="6jS-xq-Pdk"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Revert to Saved" id="Tj9-Bc-1CX">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="revertDocumentToSaved:" target="Ady-hI-5gd" id="nYX-Z4-AN7"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="6Vn-Li-3ia"/>
+                                        <menuItem title="Page Setup…" keyEquivalent="P" id="hlq-5J-YVu">
+                                            <connections>
+                                                <action selector="runPageLayout:" target="Ady-hI-5gd" id="FCn-gc-U9w"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Print…" keyEquivalent="p" id="v2c-Qq-8VA">
+                                            <connections>
+                                                <action selector="print:" target="Ady-hI-5gd" id="xOw-d5-BoA"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="FIle" id="2ML-zr-w6a">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="Item" id="Axi-f1-cQ7">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
@@ -118,12 +238,12 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="exportImage:" target="8MB-hT-wAJ" id="p0d-vX-OIb"/>
+                                    <action selector="exportAsImage:" target="8MB-hT-wAJ" id="qwW-nI-wXr"/>
                                 </connections>
                             </button>
                             <slider horizontalHuggingPriority="751" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dfY-EW-12V">
                                 <rect key="frame" x="518" y="338" width="252" height="24"/>
-                                <sliderCell key="cell" state="on" alignment="left" minValue="0.10000000000000001" maxValue="1" doubleValue="0.5" tickMarkPosition="above" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="Swl-fT-yKd"/>
+                                <sliderCell key="cell" state="on" alignment="left" minValue="0.10000000000000001" maxValue="1" doubleValue="0.55000000000000004" tickMarkPosition="above" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="Swl-fT-yKd"/>
                                 <connections>
                                     <action selector="sliderValueChangedWithSender:" target="8MB-hT-wAJ" id="dp9-Pq-yI1"/>
                                 </connections>
@@ -203,7 +323,7 @@
                 </viewController>
                 <customObject id="POc-XR-r3y" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="262" y="883"/>
+            <point key="canvasLocation" x="232" y="976"/>
         </scene>
     </scenes>
 </document>
