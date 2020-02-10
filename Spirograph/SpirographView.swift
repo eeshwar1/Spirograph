@@ -52,13 +52,15 @@ class SpirographView: NSView {
                           
         self.shapeLayer.bounds =  CGRect(x: 0, y: 0, width: 500, height: 500)
         self.shapeLayer.position = CGPoint(x: self.bounds.width/2, y: self.bounds.height/2)
-       
-        self.shapeLayer.fillColor = NSColor.blue.cgColor
-        shapeLayer.strokeColor = NSColor.green.cgColor
+      
+        randomizeShapeColors()
+     
+    }
+    
+    func randomizeShapeColors() {
         
-       
-       
-       
+        self.shapeLayer.fillColor = NSColor.random().cgColor
+        self.shapeLayer.strokeColor = NSColor.white.cgColor
     }
     
     override func draw(_ dirtyRect: NSRect) {
@@ -70,9 +72,7 @@ class SpirographView: NSView {
         self.bounds.fill()
             
         let center = NSPoint(x: self.bounds.width/2, y: self.bounds.height/2)
-        
-        // bigRadius = Double((self.bounds.width < self.bounds.height ? self.bounds.width : self.bounds.height) * 0.4)
-        
+            
         spirographEx(center: center, bigR: bigRadius, smallR: smallRadius, dotR: dotRadius)
        
         displayAttributeData()
@@ -119,6 +119,7 @@ class SpirographView: NSView {
     {
     
         self.bigRadius = (Double((self.bounds.width < self.bounds.height ? self.bounds.width : self.bounds.height)) * 0.8 * sizeRatio/2).round(toDecimal: 2)
+        
         self.smallRadius = (bigRadius * smallRadiusRatio).round(toDecimal: 2)
         self.dotRadius = (smallRadius * dotRadiusRatio).round(toDecimal: 2)
         
@@ -183,6 +184,7 @@ class SpirographView: NSView {
 
          }
         
+        randomizeShapeColors()
         animatePath(oldPath: prevSpiroPath, newPath: spiroPath)
     
      

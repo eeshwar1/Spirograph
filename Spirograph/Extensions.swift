@@ -43,3 +43,14 @@ func deg2rad(_ number: Double) -> Double
 {
     return number * .pi / 180
 }
+
+extension NSColor {
+    
+    class func random() -> NSColor {
+        let randomRed = CGFloat.random(in: 0...1)
+        let randomGreen = CGFloat.random(in: 0...1)
+        let randomBlue = CGFloat.random(in: 0...1)
+        
+        return NSColor(calibratedRed: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
+    }
+}

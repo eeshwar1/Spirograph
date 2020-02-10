@@ -66,27 +66,30 @@ class ViewController: NSViewController {
         self.spirographView.setSpirographValues(sizeRatio: sizeRatio, smallRadiusRatio: smallRadiusRatio, dotRadiusRatio: dotRadiusRatio)
     }
     
-    @IBAction func exportImage(_ sender: AnyObject) {
-
+    
+    @IBAction func exportAsImage(_ sender: Any) {
+     
         
-        let image = self.spirographView.renderImage()
-        
-        if let tiffdata = image.tiffRepresentation,
-         let bitmaprep = NSBitmapImageRep(data: tiffdata) {
+         let image = self.spirographView.renderImage()
          
-         let props = [NSBitmapImageRep.PropertyKey.compressionFactor: 1.0]
-         if let bitmapData = NSBitmapImageRep.representationOfImageReps(in: [bitmaprep], using: .png, properties: props) {
-           
-               let path: NSString = "~/Desktop/Spirograph.jpg"
-               let resolvedPath = path.expandingTildeInPath
-               
-               try! bitmapData.write(to: URL(fileURLWithPath: resolvedPath), options: [])
-               
-               print("Your image has been saved to \(resolvedPath)")
-           
-         }
-            
-        }
+               if let tiffdata = image.tiffRepresentation,
+                let bitmaprep = NSBitmapImageRep(data: tiffdata) {
+                
+                let props = [NSBitmapImageRep.PropertyKey.compressionFactor: 1.0]
+                if let bitmapData = NSBitmapImageRep.representationOfImageReps(in: [bitmaprep], using: .png, properties: props) {
+                  
+                      let path: NSString = "~/Desktop/Spirograph.jpg"
+                      let resolvedPath = path.expandingTildeInPath
+                      
+                      try! bitmapData.write(to: URL(fileURLWithPath: resolvedPath), options: [])
+                      
+                      print("Your image has been saved to \(resolvedPath)")
+                  
+                }
+                   
+               }
+        
+        
 
-    }
+       }
 }
